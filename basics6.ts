@@ -63,3 +63,12 @@ console.log(cantBeNull)
 //* And of course, we could do the same comparison inside the log itself, skipping a variable entirely
 
 console.log(canBeNull?.className || '')
+
+//* Solution 4: Tertiary Operator ('kind of' advanced, don't waste your time on this if you dont fully understand)
+cantBeNull = canBeNull ? canBeNull.className : ''
+
+//* To break down this operator, it's like so:
+//? is CanBeNull null ? No = canBeNull.classname : Yes = ''
+
+//* Where ? is 'is [value] null?' and the precursor to the no value
+//* And : is the precursor to the yes value
