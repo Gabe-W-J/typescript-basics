@@ -103,12 +103,12 @@ function useFunction(func: typedVoid | (() => string)) { //* So the input functi
     //* a function that returns nothing, or a function that returns string
 
     // func() //! Notice this errors because void isn't a function
-    if (func === void) {
-        throw new Error("func is of type void")
+    if (typeof func !== "function") {
+    throw new Error("func is of type void / isn't a function");
     }
     const funcReturn = func() //* See how this works? func now won't error because it'll always be a function
-    if (funcReturn === void) {
-        return 404
+    if (typeof funcReturn === "undefined") {
+        return 404;
     }
     return funcReturn
 
